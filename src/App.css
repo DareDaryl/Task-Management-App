@@ -9,7 +9,7 @@
   background-position: center;
   height: 100vh; /* Full viewport height, adjust as needed */
 }
-/* App.css */
+
 .todo-list {
   background-image: url('../src/Images.svg/rain.jpg'); /*Couldn't get this to work*/
   background-size: cover; /* Makes the image cover the entire container */
@@ -74,15 +74,7 @@ button:hover {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* Ensure html and body take up the full height */
+/* Ensures html and body take up the full height */
 html, body {
   height: 100%;
   margin: 0;
@@ -102,7 +94,8 @@ html, body {
     background-size: contain; /* Adjust size for smaller screens */
   }
 }
-
+/*  When the viewport width is 768 pixels or less, the background image of elements
+ with the class App will be resized using background-size: contain. */
 
 main {
   flex: 1; /* This makes sure the main content area expands to fill available space */
@@ -128,7 +121,7 @@ h1 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: url('./Images.svg/boardroom.png') no-repeat center center fixed;
+  background: url('./Images.svg/rain.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -138,6 +131,22 @@ main {
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
   border-radius: 10px;
 }
+
+/*Below changed the search bar to black. Just wanted to try it out*/
+input,
+textarea {
+  width: 45%;
+  background-color: #242424;
+  color: #fff;
+  outline: none;
+  border: 3px #c0c4cc solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
 
 h1 {
   color: #2c3e50;

@@ -1,4 +1,60 @@
-.navbar {  
+/* Navbar.css */
+
+/* Style the navbar container */
+.navbar {
+    background-color: #333; /* Navbar background color */
+    padding: 10px; /* Padding around the navbar */
+  }
+  
+  /* Style the navbar container */
+  .navbar-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space items between left and right */
+    align-items: center; /* Center items vertically */
+  }
+  
+  /* Style the nav links list */
+  .nav-links, .nav-left {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 16px; /* Set the font size here */
+  }
+  
+  /* Align nav-left items to the left */
+  .nav-left {
+    margin-left: auto; 
+  }
+  
+  /* Style individual nav buttons */
+  .nav-links li, .nav-left li {
+    margin-right: 15px; /* Space between buttons */
+  }
+  
+  /* Style for buttons */
+  .nav-links button, .nav-left button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: inherit; /* Inherit font size from parent */
+  }
+  
+  /* Hover effect for buttons */
+  .nav-links button:hover, .nav-left button:hover {
+    text-decoration: underline;
+  }
+  
+
+
+
+
+
+
+
+
+  .navbar {  
     background: linear-gradient(90deg, #080705 0%, #cf7105 100%); /* Gradient background */
     padding: 5px 10px; /* Reduced padding */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
@@ -17,7 +73,9 @@
   .nav-left {
     display: flex;
     align-items: center;
-  }
+    margin-left: auto; /* Push nav-left items to the right side */
+      }
+  
   
   .nav-right {
     display: flex;
@@ -85,6 +143,41 @@
     }
   } */
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

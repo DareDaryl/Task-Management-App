@@ -2,17 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link for routing
 import './Navbar.css';
 
-function Navbar({ setFilter }) {
+function Navbar({ setFilter }) { 
+    const handleHomeClick = () => {
+        setFilter('Home');
+    };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">
+          
         </div>
         <ul className="nav-links">
-          <li><button onClick={() => setFilter('all')}>All</button></li>  {/*Event handler that handles click*/}
-          <li><button onClick={() => setFilter('completed')}>Completed</button></li> {/*arrow function that calls 
-          the 'setFilter' function with the argument 'all, completed or incomplete'.*/}
+          <li><button onClick={() => setFilter('all')}>All</button></li>
+          <li><button onClick={() => setFilter('completed')}>Completed</button></li>
           <li><button onClick={() => setFilter('incomplete')}>Incomplete</button></li>
+        </ul>
+        <ul className="nav-left">
+          <li><button onClick={handleHomeClick}>Home</button></li> {/*does this work better than setfilter?*/}
+          <li><button onClick={handleHomeClick}>About</button></li> 
+          <li><button onClick={handleHomeClick}>Contact</button></li> 
+
+       {/*<li><button onClick={() => setFilter('Home')}>Home</button></li>        diff way of writing
+          <li><button onClick={() => setFilter('About')}>About</button></li>
+          <li><button onClick={() => setFilter('Contact')}>Contact</button></li>*/}
         </ul>
       </div>
     </nav>
@@ -20,6 +33,23 @@ function Navbar({ setFilter }) {
 }
 
 export default Navbar; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,3 +87,34 @@ function Navbar({ setFilter }) {
   
   export default Navbar; */
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

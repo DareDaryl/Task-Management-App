@@ -1,34 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; /*Hook provided by React that allows you to add state to 
+functional components. It returns an array with two elements:state value and state setter functions*/
 import TodoList from './Components/TodoList';
 import TodoForm from './Components/TodoForm';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Modal from './Components/Modal';
-import { v4 as uuidv4 } from 'uuid';
-import Home from './Pages/Home';
+import { v4 as uuidv4 } from 'uuid';  //to generate unique id's
+import Home from './Pages/Home'; //These imports are greyed out/Notworking. Not sure why 
 import About from './Pages/About';
 import Contact from './Pages/Contact';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; //added this for contact button. 
 import './App.css';
 
 
-function App() {
+function App() { //Initialized as empty array. (to do items)
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('all');
-  const [isWelcomeOpen, setIsWelcomeOpen] = useState(true);
+  const [isWelcomeOpen, setIsWelcomeOpen] = useState(true);/*Boolean state to manage the visibility of the welcome 
+  modal. Initialized as true to show the modal by default*/
   const [isDeleteOpen, setIsDeleteOpen] = useState(false); // Define state for delete confirmation modal
   const [deleteTodo, setDeleteTodo] = useState(null);
 
-  const addTodo = (text) => {
+
+  //ADDING TO DO: 
+  const addTodo = (text) => {            /*ADDING TO DO: Adds a new todo to the todos state with a unique ID 
+    (generated using uuidv4), the text provided, and a completed status set to fals*/
     setTodos([...todos, { id: uuidv4(), text, completed: false }]);
   };
-
   const toggleComplete = (id) => {
     setTodos(todos.map(todo =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo //if matches; updates completed status 
     ));
   };
 
-  const removeTodo = () => {
+  //REMOVING TO DO: 
+  const removeTodo = () => { /*REMOVING TO DO: Removes the todo item with the ID stored in 
+    deleteTodo from the todos state. Resets deleteTodo to null and closes the delete confirmation modal.*/
     if (deleteTodo) {
       setTodos(todos.filter(todo => todo.id !== deleteTodo));
       setDeleteTodo(null);
@@ -36,23 +43,27 @@ function App() {
     setIsDeleteOpen(false); // Close the delete confirmation modal
   };
 
-  const handleDeleteClick = (id) => {
+//Handles delete click 
+  const handleDeleteClick = (id) => { 
     setDeleteTodo(id);
     setIsDeleteOpen(true); // Open the delete confirmation modal
   };
 
-  const filteredTodos = todos.filter(todo => {
-    if (filter === 'completed') return todo.completed;
+//Filtering To-Do's
+  const filteredTodos = todos.filter(todo => {  
+    if (filter === 'completed') return todo.completed; /*  === does not perform type conversion.
+     It requires both operands to be of the same type for the comparison to return true. If the types differ, it returns false. */
     if (filter === 'incomplete') return !todo.completed;
     return true; // 'all'
   });
 
-
+//Rendering
   return (
     <div className="App">
       <Navbar setFilter={setFilter} />
-      <main>
-        <h1>Todo List</h1>
+      <main>             {/*<main>: Contains the main content, including the title, TodoForm for adding todos, 
+      and TodoList for displaying filtered todos. */}
+        <h1>Task Management System</h1>
         <TodoForm addTodo={addTodo} />
         <TodoList 
           todos={filteredTodos} 

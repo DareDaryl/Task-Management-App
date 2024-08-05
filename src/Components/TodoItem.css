@@ -1,0 +1,9 @@
+.todo-item {
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  .todo-item.completed {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  

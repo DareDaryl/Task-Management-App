@@ -1,0 +1,104 @@
+.navbar {  
+    background: linear-gradient(90deg, #080705 0%, #cf7105 100%); /* Gradient background */
+    padding: 5px 10px; /* Reduced padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
+    height: 50px; /* Set a fixed height for the navbar */
+    display: flex;
+    align-items: center; /* Vertically center items */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    margin: 0;
+    color: #fff; /* Ensure logo text is visible on gradient */
+    font-size: 20px; /* Adjust font size if needed */
+  }
+  
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-left .nav-links,
+  .nav-right .nav-links {
+    display: flex;
+  }
+  
+  .nav-left li,
+  .nav-right li {
+    margin: 0 10px; /* Adjust margin for spacing */
+  }
+  
+  .nav-links button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px; /* Adjust font size if needed */
+    cursor: pointer;
+  }
+  
+  .nav-links button:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* Responsive Styles 
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 15px;
+      background: #4c4233;
+      border-radius: 10px;
+      flex-direction: column;
+      gap: 0;
+      width: 200px;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .nav-links.open {
+      display: flex;
+    }
+  } */
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
